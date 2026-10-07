@@ -1,0 +1,48 @@
+<header class="header">
+
+    <div class="header-left">
+        <div class="logo">
+            <img
+                src="/images/logo/logo-felusa.png"
+                alt="FELUSA"
+            />
+        </div>
+    </div>
+
+    <div class="header-center">
+
+        <input
+            type="text"
+            placeholder="pesquisar produtos..."
+        >
+
+        <nav [class.menu-aberto]="menuAberto">
+            <a routerLink="/" (click)="fecharMenu()">Inicio</a>
+            <a routerLink="/produtos" (click)="fecharMenu()">Produtos</a>
+            <a routerLink="/doacao" (click)="fecharMenu()">Doações</a>
+            <a routerLink="/contato" (click)="fecharMenu()">Contato</a>
+        </nav>
+
+    </div>
+
+    <div class="header-right">
+        <button
+            type="button"
+            class="botao-carrinho"
+            (click)="abrirCarrinho()">
+            
+            🛒
+
+            @if (quantidadeCarrinho > 0) {
+                <span class="numero-carrinho">
+                    {{ quantidadeCarrinho }}
+                </span>
+            }
+        </button>
+
+        <button class="menu-button" (click)="abrirMenu()">
+            ☰
+        </button>
+    </div>
+
+</header>

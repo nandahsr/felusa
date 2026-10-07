@@ -1,0 +1,103 @@
+<section class="carrinho">
+    <!-- Título da página -->
+    <div class="titulo-carrinho">
+        <h1>Meu Carrinho</h1>
+        <p> Confira os produtos selecionados antes de finalizar sua compra. </p>
+    </div>
+    <!-- Quando o carrinho estiver vazio -->
+    @if (itens.length === 0) {
+    <div class="carrinho-vazio">
+
+        <h2>Seu carrinho está vazio</h2>
+
+        <p> Adicione um uniforme para continuar. </p>
+        <button type="button" class="btn-continuar" (click)="continuarComprando()">
+            CONTINUAR COMPRANDO
+        </button>
+    </div>
+    }
+    @else {
+    <!-- Quando existem produtos no carrinho -->
+    <div class="carrinho-conteudo">
+        <!-- Lista dos produtos -->
+        <div class="lista-produtos">
+            @for (item of itens; track $index) {
+            <div class="produto-carrinho">
+                <!-- Imagem -->
+                <div class="produto-imagem">
+                    @if (item.imagem) {
+                    <img [src]="item.imagem" [alt]="item.produto">
+                    }
+                    @else
+                    {
+                    <div class="sem-foto"> Sem foto </div>
+                    }
+                </div>
+
+                <!-- Informações do produto -->
+                <div class="produto-informacoes">
+                    <h2> {{ item.produto }} </h2>
+
+                    <p class="preco"> {{ formatarPreco(item.preco) }} </p>
+                    <!-- Cor escolhida -->
+                    @if (item.cor) {
+                    <p>
+                        <strong>Cor:</strong> {{ item.cor }}
+                    </p>
+                    }
+                    <!-- Modelo escolhido -->
+                    @if (item.variacao) {
+                    <p>
+                        <strong>Modelo:</strong> {{ item.variacao }}
+                    </p>
+                    }
+                    <!-- Tamanho escolhido -->
+                    @if
+                    (item.tamanho) {
+                    <p> <strong>Tamanho:</strong> {{ item.tamanho }} </p>
+                    }
+                    <!-- Controle da quantidade -->
+                    <div class="quantidade">
+                        <span>Quantidade:</span>
+                        <button type="button" (click)="diminuirQuantidade($index)"> − </button>
+                        <span class="numero"> {{ item.quantidade
+                            }} </span> <button type="button" (click)="aumentarQuantidade($index)"> + </button>
+                    </div>
+
+                </div>
+
+                <!-- Subtotal e remover -->
+                <div class="produto-total">
+                    <p class="subtotal"> {{ formatarPreco( item.preco * item.quantidade ) }} </p>
+                    <button type="button" class="btn-remover" (click)="removerProduto($index)">
+                        REMOVER
+                    </button>
+                </div>
+            </div>
+            }
+        </div>
+        <!-- Resumo da compra -->
+        <aside class="resumo">
+            <h2>Resumo da compra</h2>
+            <div class="linha">
+                <span>Produtos</span>
+                <span> {{ formatarPreco(total) }} </span>
+            </div>
+            <div class="linha-total">
+                <strong>Total</strong>
+                <strong> {{ formatarPreco(total) }} </strong>
+            </div>
+            <!-- Finalizar compra -->
+            <button type="button" class="btn-finalizar" (click)="finalizarCompra()">
+                FINALIZAR COMPRA </button>
+            <!-- Voltar para produtos -->
+            <button type="button" class="btn-continuar" (click)="continuarComprando()">
+                CONTINUAR COMPRANDO
+            </button>
+            <!-- Limpar todos os produtos -->
+            <button type="button" class="btn-limpar" (click)="limparCarrinho()">
+                LIMPAR CARRINHO
+            </button>
+        </aside>
+    </div> }
+</section>
