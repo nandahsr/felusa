@@ -1,0 +1,435 @@
+/* =========================================
+   PÁGINA
+========================================= */
+
+.pagina-doacao {
+    width: 100%;
+    min-height: calc(100vh - 100px);
+
+    padding: 50px 20px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    background-color: #f2f2f2;
+}
+
+
+/* =========================================
+   CARD PRINCIPAL
+========================================= */
+
+.card-doacao {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 570px;
+
+    position: relative;
+
+    display: flex;
+
+    background-color: white;
+
+    border-radius: 35px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================
+   CONTEÚDO
+========================================= */
+
+.conteudo-doacao {
+    width: calc(100% - 110px);
+
+    padding: 40px 80px 50px;
+
+    box-sizing: border-box;
+}
+
+
+.conteudo-doacao h1 {
+    margin: 0 0 55px;
+
+    text-align: center;
+
+    color: #a71919;
+
+    font-size: 32px;
+    font-weight: 800;
+}
+
+
+/* =========================================
+   FORMULÁRIO
+========================================= */
+
+form {
+    width: 100%;
+    max-width: 500px;
+}
+
+
+/* =========================================
+   CAMPOS
+========================================= */
+
+.campo {
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 28px;
+}
+
+
+.campo > label {
+    position: absolute;
+
+    top: -9px;
+    left: 15px;
+
+    z-index: 2;
+
+    padding: 0 5px;
+
+    background-color: white;
+
+    color: #666;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.campo select {
+    width: 100%;
+    height: 48px;
+
+    padding: 0 16px;
+
+    box-sizing: border-box;
+
+    border: 2px solid #777;
+    border-radius: 7px;
+
+    background-color: white;
+
+    color: #777;
+
+    font-size: 15px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+.campo select:focus {
+    border-color: #a71919;
+}
+
+
+/* =========================================
+   UPLOAD
+========================================= */
+
+.upload {
+    width: 100%;
+    min-height: 48px;
+
+    padding: 6px 8px 6px 16px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    border: 2px solid #777;
+    border-radius: 7px;
+
+    color: #999;
+}
+
+
+.upload span {
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-size: 15px;
+}
+
+
+.upload input {
+    display: none;
+}
+
+
+.botao-upload {
+    flex-shrink: 0;
+
+    padding: 8px 18px;
+
+    border-radius: 5px;
+
+    background-color: #b63a3a;
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.botao-upload:hover {
+    background-color: #941f1f;
+}
+
+
+.campo small {
+    display: block;
+
+    margin-top: 5px;
+    margin-left: 5px;
+
+    color: #999;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   BOTÃO ENVIAR
+========================================= */
+
+.botao-enviar {
+    min-width: 170px;
+
+    margin-top: 15px;
+
+    padding: 11px 25px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #b63838;
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.botao-enviar:hover {
+    background-color: #941f1f;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   DETALHE VERMELHO
+========================================= */
+
+.detalhe-lateral {
+    width: 110px;
+    height: 100%;
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    background-color: #751414;
+
+    border-radius: 30px 0 0 30px;
+}
+
+
+.detalhe-claro {
+    width: 30px;
+    height: 100%;
+
+    background-color: #8f1b1b;
+
+    border-radius: 30px 0 0 30px;
+}
+
+
+/* =========================================
+   TELAS GRANDES
+========================================= */
+
+@media (min-width: 1400px) {
+
+    .pagina-doacao {
+        padding: 60px 40px;
+    }
+
+    .card-doacao {
+        max-width: 1250px;
+        min-height: 620px;
+    }
+
+    .conteudo-doacao {
+        padding: 45px 100px 55px;
+    }
+
+    form {
+        max-width: 550px;
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .pagina-doacao {
+        padding: 35px 20px;
+    }
+
+    .card-doacao {
+        min-height: 540px;
+
+        border-radius: 25px;
+    }
+
+    .conteudo-doacao {
+        width: calc(100% - 70px);
+
+        padding: 35px 45px;
+    }
+
+    .detalhe-lateral {
+        width: 70px;
+    }
+
+    .detalhe-claro {
+        width: 20px;
+    }
+
+    .conteudo-doacao h1 {
+        margin-bottom: 45px;
+
+        font-size: 27px;
+    }
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+    .pagina-doacao {
+        min-height: auto;
+
+        padding: 25px 12px;
+    }
+
+
+    .card-doacao {
+        width: 100%;
+        min-height: auto;
+
+        border-radius: 20px;
+    }
+
+
+    .conteudo-doacao {
+        width: calc(100% - 25px);
+
+        padding: 30px 25px 35px 20px;
+    }
+
+
+    .conteudo-doacao h1 {
+        margin-bottom: 40px;
+
+        font-size: 23px;
+    }
+
+
+    form {
+        width: 100%;
+    }
+
+
+    .campo {
+        margin-bottom: 25px;
+    }
+
+
+    .campo select {
+        height: 45px;
+
+        font-size: 13px;
+    }
+
+
+    .upload {
+        min-height: 45px;
+
+        padding-left: 12px;
+    }
+
+
+    .upload span {
+        font-size: 12px;
+    }
+
+
+    .botao-upload {
+        padding: 7px 10px;
+
+        font-size: 10px;
+    }
+
+
+    .botao-enviar {
+        min-width: 150px;
+
+        padding: 10px 20px;
+
+        font-size: 12px;
+    }
+
+
+    /* detalhe lateral menor */
+
+    .detalhe-lateral {
+        width: 25px;
+
+        border-radius: 18px 0 0 18px;
+    }
+
+
+    .detalhe-claro {
+        width: 8px;
+
+        border-radius: 18px 0 0 18px;
+    }
+}

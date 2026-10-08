@@ -1,0 +1,210 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    background-color: var(--background-color);
+    border-bottom: 1px solid #d9d9d9;
+
+    /* ADICIONADO */
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.header-left{
+    flex: 1;
+}
+
+.header-center{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-center input{
+    width: 420px;
+    padding: 10px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    /* ADICIONADO */
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    gap: 24px;
+}
+
+nav a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.header-right{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-right button{
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.logo img{
+    height: 60px;
+}
+
+.menu-button {
+    display: none;
+}
+
+
+/* =========================================
+   TELA GRANDE
+   Mantém os elementos no lugar
+========================================= */
+
+@media (min-width: 1400px) {
+
+    .header {
+        padding-left: max(40px, calc((100vw - 1400px) / 2 + 40px));
+        padding-right: max(40px, calc((100vw - 1400px) / 2 + 40px));
+    }
+
+    .header-left {
+        flex: 1;
+    }
+
+    .header-center {
+        flex: 2;
+    }
+
+    .header-right {
+        flex: 1;
+    }
+}
+
+
+/* =========================================
+   TABLET / CELULAR
+========================================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 10px 16px;
+        flex-wrap: wrap;
+    }
+
+    .header-left {
+        flex: 0;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .header-center {
+        order: 3;
+        flex: 100%;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .header-center input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 9px 12px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav.menu-aberto {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav.menu-aberto a {
+        padding: 12px 0;
+        border-bottom: 1px solid #d9d9d9;
+    }
+
+    .header-right {
+        flex: 0;
+        gap: 5px;
+    }
+
+    .header-right button {
+        padding: 6px 8px;
+    }
+
+    .menu-button {
+        display: block;
+    }
+}
+
+
+/* =========================================
+   CARRINHO
+========================================= */
+
+.botao-carrinho {
+    position: relative;
+}
+
+.numero-carrinho {
+    position: absolute;
+
+    top: -8px;
+    right: -8px;
+
+    min-width: 18px;
+    height: 18px;
+
+    padding: 2px 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #333;
+    color: white;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    /* ADICIONADO */
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+    .numero-carrinho {
+        top: -6px;
+        right: -6px;
+
+        min-width: 16px;
+        height: 16px;
+
+        font-size: 10px;
+    }
+}

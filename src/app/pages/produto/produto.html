@@ -1,0 +1,268 @@
+<section class="produto">
+
+    <div class="produto-imagem">
+
+        @if (imagem) {
+
+            <img
+                [src]="imagem"
+                [alt]="produto"
+            >
+
+        } @else {
+
+            <div class="sem-foto">
+                Sem foto
+            </div>
+
+        }
+
+    </div>
+
+    <div class="produto-informacoes">
+
+        <h1>{{ produto }}</h1>
+
+        <p class="preco">{{ preco }}</p>
+
+        @if (cores.length > 0) {
+
+            <div class="opcao">
+
+                <h3>Cor</h3>
+
+                <div class="opcoes">
+
+                    @for (cor of cores; track cor) {
+
+                        <button
+                            type="button"
+                            [class.selecionado]="corSelecionada === cor"
+                            (click)="corSelecionada = cor; erroCor = false"
+                        >
+                            {{ cor }}
+                        </button>
+
+                    }
+
+                </div>
+
+                @if (erroCor) {
+
+                    <p class="mensagem-erro">
+                        Selecione uma cor.
+                    </p>
+
+                }
+
+            </div>
+
+        }
+
+        @if (variacoes.length > 0) {
+
+            <div class="opcao">
+
+                <h3>Modelo</h3>
+
+                <div class="opcoes">
+
+                    @for (variacao of variacoes; track variacao) {
+
+                        <button
+                            type="button"
+                            [class.selecionado]="variacaoSelecionada === variacao"
+                            (click)="variacaoSelecionada = variacao; erroModelo = false"
+                        >
+                            {{ variacao }}
+                        </button>
+
+                    }
+
+                </div>
+
+                @if (erroModelo) {
+
+                    <p class="mensagem-erro">
+                        Selecione um modelo.
+                    </p>
+
+                }
+
+            </div>
+
+        }
+
+        <div class="opcao">
+
+            <h3>Tamanho</h3>
+
+            <div class="opcoes">
+
+                @for (tamanho of tamanhos; track tamanho) {
+
+                    <button
+                        type="button"
+                        [class.selecionado]="tamanhoSelecionado === tamanho"
+                        (click)="tamanhoSelecionado = tamanho; erroTamanho = false"
+                    >
+                        {{ tamanho }}
+                    </button>
+
+                }
+
+            </div>
+
+            @if (erroTamanho) {
+
+                <p class="mensagem-erro">
+                    Selecione um tamanho.
+                </p>
+
+            }
+
+        </div>
+
+        <div class="opcao">
+
+            <h3>Quantidade</h3>
+
+            <div class="quantidade">
+
+                <button
+                    type="button"
+                    (click)="diminuirQuantidade()"
+                >
+                    −
+                </button>
+
+                <span>{{ quantidade }}</span>
+
+                <button
+                    type="button"
+                    (click)="aumentarQuantidade()"
+                >
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            class="btn-carrinho"
+            (click)="adicionarCarrinho()"
+        >
+            ADICIONAR AO CARRINHO
+        </button>
+
+        @if (produtoAdicionado) {
+
+            <div class="aviso-carrinho">
+                Produto adicionado ao carrinho!
+            </div>
+
+        }
+
+    </div>
+
+</section>
+
+@if (medidas.length > 0) {
+
+    <section class="medidas">
+
+        <div class="medidas-titulo">
+
+            <h2>Medidas</h2>
+
+            <p>
+                Confira as medidas disponíveis para cada tamanho.
+            </p>
+
+        </div>
+
+        <div class="tabela-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Tamanho</th>
+
+                        @if (id === 'bermuda') {
+
+                            <th>Cintura</th>
+                            <th>Comprimento</th>
+
+                        }
+
+                        @if (id === 'camiseta') {
+
+                            <th>Comprimento</th>
+                            <th>Largura</th>
+                            <th>Manga</th>
+                            <th>Busto</th>
+
+                        }
+
+                        @if (id === 'calca') {
+
+                            <th>Comprimento</th>
+                            <th>Cintura</th>
+                            <th>Coxa</th>
+
+                        }
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @for (medida of medidas; track medida.tamanho) {
+
+                        <tr>
+
+                            <td>{{ medida.tamanho }}</td>
+
+                            @if (id === 'bermuda') {
+
+                                <td>{{ medida.cintura }}</td>
+                                <td>{{ medida.comprimento }}</td>
+
+                            }
+
+                            @if (id === 'camiseta') {
+
+                                <td>{{ medida.comprimento }}</td>
+                                <td>{{ medida.largura }}</td>
+                                <td>{{ medida.manga }}</td>
+                                <td>{{ medida.busto }}</td>
+
+                            }
+
+                            @if (id === 'calca') {
+
+                                <td>{{ medida.comprimento }}</td>
+                                <td>{{ medida.cintura }}</td>
+                                <td>{{ medida.coxa }}</td>
+
+                            }
+
+                        </tr>
+
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+}

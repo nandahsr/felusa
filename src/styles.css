@@ -1,0 +1,20 @@
+:root{
+    --primary-color: #691a19;
+    --secondary-color: #b90504;
+    --accent-color: #990100;
+    --background-color: #f4f3f3;
+    --text-color: #333333;
+    --white: #ffffff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Livvic', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}

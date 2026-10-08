@@ -1,0 +1,122 @@
+<section class="pagina-doacao">
+
+    <div class="card-doacao">
+
+        <div class="conteudo-doacao">
+
+            <h1>SOBRE A PEÇA</h1>
+
+            <form>
+
+                <!-- PEÇA -->
+                <div class="campo">
+                    <label for="peca">Qual é a peça de roupa?</label>
+
+                    <select id="peca" name="peca">
+                        <option value="" selected disabled>
+                            Selecione a peça de roupa
+                        </option>
+
+                        <option value="camiseta">Camiseta</option>
+                        <option value="calca">Calça</option>
+                        <option value="bermuda">Bermuda</option>
+                        <option value="casaco">Casaco</option>
+                        <option value="moletom">Moletom</option>
+                    </select>
+                </div>
+
+
+                <!-- TAMANHO -->
+                <div class="campo">
+                    <label for="tamanho">Tamanho</label>
+
+                    <select id="tamanho" name="tamanho">
+                        <option value="" selected disabled>
+                            Selecione o tamanho
+                        </option>
+
+                        <option value="PP">PP</option>
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                        <option value="EXGG">EXGG</option>
+                    </select>
+                </div>
+
+
+                <!-- CONDIÇÃO -->
+                <div class="campo">
+                    <label for="condicao">Condições</label>
+
+                    <select id="condicao" name="condicao">
+                        <option value="" selected disabled>
+                            Avalie o estado da peça
+                        </option>
+
+                        <option value="otimo">
+                            Ótimo estado
+                        </option>
+
+                        <option value="bom">
+                            Bom estado
+                        </option>
+
+                        <option value="regular">
+                            Regular
+                        </option>
+                    </select>
+                </div>
+
+
+                <!-- FOTO -->
+                <div class="campo campo-foto">
+
+                    <label for="foto">Foto</label>
+
+                    <div class="upload">
+
+                        <span>Faça upload da foto</span>
+
+                        <label for="foto" class="botao-upload">
+                            UPLOAD
+                        </label>
+
+                        <input
+                            id="foto"
+                            name="foto"
+                            type="file"
+                            accept="image/*"
+                        >
+
+                    </div>
+
+                    <small>
+                        *em caso de avaria, mande fotos nítidas delas
+                    </small>
+
+                </div>
+
+
+                <!-- BOTÃO -->
+                <button
+                    type="submit"
+                    class="botao-enviar"
+                >
+                    ENVIAR<br>
+                    FORMULÁRIO
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- DETALHE VERMELHO -->
+        <div class="detalhe-lateral">
+            <div class="detalhe-claro"></div>
+        </div>
+
+    </div>
+
+</section>

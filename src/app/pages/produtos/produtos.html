@@ -1,0 +1,182 @@
+<section class="produtos">
+
+    <div class="produtos-titulo">
+        <h1>Produtos</h1>
+
+        @if (!busca) {
+            <p>Confira os uniformes disponíveis</p>
+        } @else {
+            <p>
+                Resultado da pesquisa por:
+                <strong>{{ busca }}</strong>
+            </p>
+        }
+    </div>
+
+
+    <div class="produtos-lista">
+
+        @if (mostrarProduto('camiseta')) {
+
+            <div class="produto-card">
+
+                <img
+                    src="/images/uniformes/06_camiseta_preta.png"
+                    alt="Camiseta HAS"
+                >
+
+                <h2>Camiseta HAS</h2>
+
+                <p class="preco">R$60,00</p>
+
+                <a
+                    routerLink="/produto/camiseta"
+                    class="btn-produto"
+                >
+                    VER PRODUTO
+                </a>
+
+            </div>
+
+        }
+
+
+        @if (mostrarProduto('calca')) {
+
+            <div class="produto-card">
+
+                <img
+                    src="/images/uniformes/02_calca_preta.png"
+                    alt="Calça HAS"
+                >
+
+                <h2>Calça HAS</h2>
+
+                <p class="preco">R$85,00</p>
+
+                <a
+                    routerLink="/produto/calca"
+                    class="btn-produto"
+                >
+                    VER PRODUTO
+                </a>
+
+            </div>
+
+        }
+
+
+        @if (mostrarProduto('bermuda')) {
+
+            <div class="produto-card">
+
+                <img
+                    src="/images/uniformes/08_short_preto.png"
+                    alt="Bermuda HAS"
+                >
+
+                <h2>Bermuda HAS</h2>
+
+                <p class="preco">R$85,00</p>
+
+                <a
+                    routerLink="/produto/bermuda"
+                    class="btn-produto"
+                >
+                    VER PRODUTO
+                </a>
+
+            </div>
+
+        }
+
+
+        @if (mostrarProduto('jaleco')) {
+
+            <div class="produto-card">
+
+                <img
+                    src="/images/uniformes/03_jaleco_azul.png"
+                    alt="Jaleco HAS"
+                >
+
+                <h2>Jaleco HAS</h2>
+
+                <p class="preco">R$85,00</p>
+
+                <a
+                    routerLink="/produto/jaleco"
+                    class="btn-produto"
+                >
+                    VER PRODUTO
+                </a>
+
+            </div>
+
+        }
+
+
+        @if (mostrarProduto('casaco')) {
+
+            <div class="produto-card">
+
+                <img
+                    src="/images/uniformes/05_jaqueta_preta.png"
+                    alt="Casaco HAS"
+                >
+
+                <h2>Casaco HAS</h2>
+
+                <p class="preco">R$150,00</p>
+
+                <a
+                    routerLink="/produto/casaco"
+                    class="btn-produto"
+                >
+                    VER PRODUTO
+                </a>
+
+            </div>
+
+        }
+
+
+        @if (mostrarProduto('moletom')) {
+
+            <div class="produto-card">
+
+                <div class="sem-foto">
+                    Sem foto
+                </div>
+
+                <h2>Moletom HAS</h2>
+
+                <p class="preco">R$150,00</p>
+
+                <a
+                    routerLink="/produto/moletom"
+                    class="btn-produto"
+                >
+                    VER PRODUTO
+                </a>
+
+            </div>
+
+        }
+
+    </div>
+
+
+    @if (busca && nenhumProdutoEncontrado()) {
+
+        <div class="nenhum-produto">
+            <h2>Nenhum produto encontrado</h2>
+
+            <p>
+                Não encontramos produtos para "{{ busca }}".
+            </p>
+        </div>
+
+    }
+
+</section>
